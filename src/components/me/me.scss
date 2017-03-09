@@ -1,0 +1,25 @@
+.me{
+	.content{
+		// width: 602px;
+		width:500px;
+		margin:127px auto 0;
+		.img{
+			width: 500px;
+			position:relative;
+			img{
+				max-width:100%;
+			}
+			.down{
+				position: absolute;
+				bottom:10px;
+				right:-15px;
+				width:41px;
+				line-height:1.3;
+				white-space: normal;
+				text-align:center;
+				color:#A2AFBB;
+				font-size:14px;
+			}
+		}
+	}
+}

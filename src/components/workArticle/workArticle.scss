@@ -1,0 +1,67 @@
+// @import '../../common/style/mixin.scss';
+
+.workArticle{
+	background: #F5F5F5;
+	overflow: hidden;
+	.content_lm{
+		background: #fff;
+		margin:40px auto 15px auto;
+		padding:25px 40px;
+		.control{
+			text-align: right;
+			float: right;
+			margin-bottom: 15px;
+			width: 100%;
+			.prev,.next{
+				font-weight: bold;
+				font-size:14px;
+				position: relative;
+				color:#DFE5EB;
+				cursor: pointer;
+				&.active{
+					color:#a2afbb;
+				}
+			}
+			.prev{
+				margin-right:28px;
+				&:after{
+					content:'';
+					position: absolute;
+					width: 2px;height:14px;
+					background: #DFE5EB;
+					left:30px;
+					top:0px;
+				}
+			}
+		}
+		.title{
+			color:#3D444A;
+			font-size:24px;
+			margin-bottom:16px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			width: 80%;
+		}
+		.time{
+			color:#A2AFBB;
+			font-size:13px;
+		}
+		.hr{
+			background: #E9EDF0;
+			height:1px;
+			width: 100%;
+			margin:28px 0 33px;
+		}
+		.text{
+			font-size:13px;
+			color:#A2AFBB;
+			line-height: 1.60;
+		}
+		.imgs{
+			margin-top: 31px;
+			text-align: center;
+		}
+	}
+}
+

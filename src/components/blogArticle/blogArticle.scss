@@ -1,0 +1,96 @@
+@import '../../common/style/mixin.scss';
+.blogArticle {
+    background: #F5F5F5;
+    overflow: hidden;
+    .content_lm {
+        margin: 40px auto 15px auto;
+        @extend .clear;
+        .content,
+        .nav {
+            background: #fff;
+            min-height: 100px;
+        }
+        .content {
+            width: 801px;
+            float: left;
+            padding: 40px;
+            box-sizing: border-box;
+            overflow: hidden;
+            .title {
+                color: #3D444A;
+                font-size: 24px;
+                margin-bottom: 16px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                width: 80%;
+            }
+            .hr {
+                background: #E9EDF0;
+                height: 1px;
+                width: 100%;
+                margin: 28px 0 33px;
+            }
+            .text {
+                font-size: 14px;
+                color: #3d444a;
+                line-height: 1.60;
+            }
+            .taglist {
+                li {
+                    color: #778490;
+                    background: #DFE5EB;
+                    border-radius: 12px;
+                    display: inline-block;
+                    padding: 4px 12px;
+                    font-size: 13px;
+                    margin-right: 12px;
+                    cursor: pointer;
+                }
+            }
+        }
+        .nav {
+            width: 179px;
+            float: right;
+            box-sizing: border-box;
+            text-align: center;
+            .top{
+            	padding:0 25px;
+            	box-sizing: border-box;
+            	.link{
+                    display: block;
+                    border-bottom:#eef1f3 solid 1px;
+                    padding:25px 0;
+                    cursor: pointer;
+                    font-size:13px;
+                    color:#a2afbb;
+                    &.active{
+                    	color:#3d444a;
+                    }
+                    &:last-child{
+                    	border-bottom:0;
+                    }
+            	}
+            }
+            .hr{
+            	height:15px;
+            	background:#f5f5f5;
+            	width:100%;
+            }
+            .bottom{
+            	padding:0 25px;
+            	box-sizing: border-box;
+            	.img{
+                   margin:28px 0 0 0 ;
+            	}
+            	.text{
+            		text-align: center;
+            		display: block;
+            		margin:16px 0;
+            		color:#3d444a;
+            		font-size:13px;
+            	}
+            }
+        }
+    }
+}

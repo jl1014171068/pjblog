@@ -1,0 +1,7 @@
+.clear{
+	clear:both;
+	zoom:1;
+	&:before,&:after{
+		display:block;clear:both;content:"";visibility:hidden;height:0
+	}
+}

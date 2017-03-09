@@ -1,0 +1,27 @@
+.footer{
+	padding:50px 0;
+	.content_lm{
+		display: flex;
+		justify-content: center;
+		.left{
+			margin-right:120px;
+			.links{
+				display: flex;
+				li{
+					padding:22px 60px 38px 0;
+					flex:1;
+				}
+			}
+			.info{
+				color:#3D444A;
+				font-size:13px;
+			}
+		}
+		.right{
+			display: flex;
+			.ewm{
+				margin-right:32px;
+			}
+		}
+	}
+}

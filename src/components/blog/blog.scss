@@ -1,0 +1,118 @@
+@import '../../common/style/mixin.scss';
+.blog{
+	background: #F5F5F5;
+	overflow: hidden;
+	.content_lm{
+		margin:40px auto 15px auto;
+		@extend .clear;
+		.content,.nav{
+			background:#fff;
+			min-height:100px;
+		}
+		.content{
+			width: 821px;
+			float:left;
+			padding:40px;
+			box-sizing: border-box;
+			overflow: hidden;
+			.blog_list{
+				.blog-list{
+					margin-bottom: 40px;
+					a{
+						display: flex;
+						width: 100%;
+					}
+					.img{
+						width: 241px;
+						flex:241px 0 0;
+						margin-right: 37px;
+					}
+					.info{
+						flex:1;
+						.title{
+							margin: 22px 0  17px;
+							font-size: 18px;
+							color:#3D444A;
+						}
+						.text{
+							color:#75818D;
+							line-height: 1.40;
+							font-size:13px;
+							margin-bottom: 19px;
+						}
+						.time{
+							color:#75818D;
+							font-size:12px;
+						}
+					}
+				}
+			}
+			.paging{
+				display: flex;
+				justify-content: center;
+				li{
+					display: inline-block;
+					padding:4px 12px;
+					color:#A2AFBB;
+					font-size:15px;
+					cursor: pointer;
+					background: none;
+					border:none;
+					line-height:1.1;
+					height:auto;
+					margin-right:15px;
+					&.active{
+						color:#778490;
+						background: #DFE5EB;
+						border-radius: 12px;
+					}
+				}
+			}
+		}
+		.nav{
+			width:160px;
+			float: right;
+			padding:39px 0;
+			box-sizing: border-box;
+			text-align: center;
+			.title{
+				font-size: 15px;
+				color:#A2AFBB;
+				margin-bottom: 26px;
+				position: relative;
+				cursor: pointer;
+				&.current{
+					color:#3D444A;
+					&:after{
+						content:'';
+						height:3px;
+						width:31px;
+						background: #3D444A;
+						position: absolute;
+						top: 22px;
+						left:50%;
+						margin-left: -15.5px;
+					}
+				}
+			}
+			.links{
+				li{
+					font-size: 13px;
+					color:#A2AFBB;
+					margin-bottom: 30px;
+					cursor: pointer;
+					position: relative;
+					&.current{
+						color:#3D444A;
+					}
+					&:last-child{
+						margin-bottom: 0;
+					}
+					.count{
+						font-style: normal;
+					}
+				}
+			}
+		}
+	}
+}
