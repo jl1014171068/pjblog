@@ -7,7 +7,6 @@ import share from 'components/share/share'
 import workArticle from 'components/workArticle/workArticle'
 import blogArticle from 'components/blogArticle/blogArticle'
 
-import test from 'components/test/test'
 
 
 Vue.use(Router)
@@ -20,12 +19,7 @@ export default new Router({
         title: 'title path',
         redirect: '/work'
     },
-    {
-        path: '/test',
-        name: 'test',
-        component: test,
-        title: 'title test'
-    }, {
+  {
         path: '/work',
         name: 'work',
         component: work,
