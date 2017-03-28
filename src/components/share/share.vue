@@ -1,10 +1,12 @@
 <template>
     <div class="share">
-        <div class="header" :style="styleObj">
-            <div class="logo">
-                <img src="../../../resource/img/share_logo.png" height="141" width="326">
+        <div class="header" :style="styleObj" >
+            <div class="content">
+                <div class="logo">
+                <img src="../../../resource/img/share_logo.png" :style='imgStyle'>
+                 <!-- height="141" width="326" -->
             </div>
-            <router-link :to="{ path: '/work' }" class="link">
+            <router-link :to="{ path: '/works' }" class="link">
                 <i class="img"><img src="../../../resource/img/tiger.png" height="23" width="24"></i>
                 <span class="text">个人主页</span>
             </router-link>
@@ -12,6 +14,7 @@
                 <li>分享给好友</li>
                 <li>推荐好链</li>
             </ul>
+            </div>
         </div>
         <div class="content_lm">
             <ul class="titles">
@@ -67,9 +70,17 @@ export default {
         computed: {
             styleObj: function() {
                 let winW = document.body.clientWidth,
-                    setHeight = (winW * 400) / 1920 + 'px',
+                    setHeight = (winW * 400) / 1920 ,
                     obj = {
-                        height: setHeight,
+                        height: setHeight<300?'300px':setHeight+'px'
+                    }
+                return obj;
+            },
+            imgStyle:function(){
+                let heightH= (parseInt(this.styleObj.height) * 141) / 400;
+                let obj = {
+                        height: (parseInt(this.styleObj.height) * 141) / 400 + 'px' ,
+                        'margin-bottom':(parseInt(this.styleObj.height) * 40) / 400 + 'px',
                     }
                 return obj;
             }

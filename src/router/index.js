@@ -1,11 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import work from 'components/work/work'
+import works from 'components/works/works'
 import me from 'components/me/me'
-import blog from 'components/blog/blog'
+import blogs from 'components/blogs/blogs'
 import share from 'components/share/share'
-import workArticle from 'components/workArticle/workArticle'
+import article from 'components/article/article'
 import blogArticle from 'components/blogArticle/blogArticle'
+
+import login from 'components/oauth/github'
 
 
 
@@ -14,42 +16,48 @@ export default new Router({
     mode: 'history',
     routes: [{
         path: '/',
-        name: 'work',
-        component: work,
-        title: 'title path',
-        redirect: '/work'
+        component: works,
+        title: '小老虎喵喵喵-首页',
+        redirect: '/works'
     },
-  {
-        path: '/work',
-        name: 'work',
-        component: work,
-        title: 'title work'
-    }, {
-        path: '/workArticle',
-        name: 'workArticle',
-        component: workArticle,
-        title: 'title workArticle'
+    {
+        path: '/works',
+        name: 'works',
+        component: works,
+        title: '小老虎喵喵喵-首页'
+    },
+      {
+        path: '/article/:slug',
+        name: 'article',
+        component: article,
+        title: '小老虎喵喵喵-作品详情'
 
     }, {
-        path: '/me',
-        name: 'me',
+        path: '/about',
+        name: 'about',
         component: me,
-        title: 'me'
+        title: '小老虎喵喵喵-关于我'
     }, {
-        path: '/blog',
-        name: 'blog',
-        component: blog,
-        title: 'blog'
+        path: '/blogs',
+        name: 'blogs',
+        component: blogs,
+        title: '小老虎喵喵喵-文章列表'
     }, {
-        path: '/blogArticle',
-        name: 'blogArticle',
+        path: '/blog/:slug',
+        name: 'slug',
         component: blogArticle,
-        title: 'title blogArticle'
+        title: '小老虎喵喵喵-文章详情'
     }, {
         path: '/share',
         name: 'share',
         component: share,
-        title: 'share'
+        title: '小老虎喵喵喵-分享中心'
+    },
+    {
+        path: '/oauth/github',
+        name: 'login',
+        component: login,
+        title: 'login'
     }]
 })
 

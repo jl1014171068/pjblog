@@ -2,10 +2,17 @@
 import axios from 'axios'
 import Vue from 'vue'
 
-let options = {}
+let options = {
+  // baseURL:`http://xsp.zendaiart.net/api`,
+  baseURL:`http://service.smalltiger.me/api`,
+  'Content-Type':'text/html; charset=utf-8',
+  'Cache-Control':'no-cache, no-store',
+  Server:'GitHub.com'
+}
   // options.baseURL = `https://cnodejs.org/api/v1`
-  options.baseURL = `http://xsp.zendaiart.net/api`
-  options.headers={'X-Requested-With': 'XMLHttpRequest'}
+  // options.baseURL = `http://xsp.zendaiart.net/api`
+  // options.baseURL = `http://fanyi.youdao.com/openapi.do`
+  // options.headers.post['Content-Type'] = 'text/html; charset=utf-8';
   let $axios
 
   export default {
@@ -34,3 +41,6 @@ let options = {}
     })
   }
 }
+
+
+

@@ -22,17 +22,17 @@ export default {
                 menus: [{
                     'en': 'Work',
                     'cn': '作品',
-                    'href': '/work',
+                    'href': '/works',
                     'id':0
                 }, {
                     'en': 'Me',
                     'cn': '我',
-                    'href': '/me',
+                    'href': '/about',
                      'id':1
                 }, {
                     'en': 'Blog',
                     'cn': '文章',
-                    'href': '/blog',
+                    'href': '/blogs',
                      'id':2
                 }, {
                     'en': 'Share',

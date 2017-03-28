@@ -4,37 +4,45 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+// router加载进度 
+import VueProgressBar from 'vue-progressbar'
 
 
 // emementui引入
 import ElementUI from 'element-ui'
 Vue.use(ElementUI)
 
-// import axios from 'components/plugins/axios'
-import axios from 'common/axios/axios'
-Vue.use(axios)
+// import axios from 'common/axios/axios'
+// Vue.use(axios)
 
-
+import 'loaders.css'
 // 自定义主样式
 import 'common/style/index.scss';
 
 //图片懒加载vue-lazyload
 import VueLazyLoad from 'vue-lazyload';
 Vue.use(VueLazyLoad,{
-	loading:require('assets/loading.gif')
+  loading:require('assets/loadingn.gif')
 });
-// // axios引入,类似vue-resourse
-// import vueResource  from 'vue-resource'
-// Vue.use(vueResource)
+
+import store from './vuex/store';
 
 
+//正常化css
 import 'normalize.css'
-
+// animatecss引入
+import 'animate.css/animate.min.css';
 
 router.afterEach(router =>  {
   document.title=router.name;
   document.body.scrollTop=0;
 });
+
+Vue.use(VueProgressBar, {
+  color: 'rgb(143, 255, 199)',
+  failedColor: 'red',
+  height: '2px'
+})
 
 
 
@@ -42,6 +50,7 @@ router.afterEach(router =>  {
 new Vue({
   el: '#app',
   router,
+  store,
   template: '<App/>',
   components: { App }
 })

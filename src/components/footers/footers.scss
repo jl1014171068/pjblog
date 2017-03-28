@@ -10,6 +10,16 @@
 				li{
 					padding:22px 60px 38px 0;
 					flex:1;
+					a{
+						&:hover{
+							img{
+								transform: translateY(-5px);
+							}
+						}
+						img{
+							transition: all 0.4s;
+						}
+					}
 				}
 			}
 			.info{

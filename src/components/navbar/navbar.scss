@@ -13,6 +13,11 @@
 			flex:1;
 			padding:14px 0;
 			text-align: right;
+			&:hover{
+				a{
+					color:#3D444A !important;
+				}
+			}
 			a{
 				&.active{
 					color:#3D444A !important;

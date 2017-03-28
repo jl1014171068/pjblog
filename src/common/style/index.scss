@@ -1,9 +1,46 @@
 @import './reset.scss';
 
+
+
+*{
+	box-sizing: border-box;
+}
 .content_lm{
 	width:1000px;
 	margin:0 auto;
 	min-height:1px;
 }
+.footer_hr{
+	background:#f8f8f8;
+	width:100%;
+	height:15px;
+	margin-top:80px;
+}
+.pub_hr{
+	background:#f8f8f8;
+	width:100%;
+	height:15px;
+}
 
-
+.paging{
+	display: flex;
+	justify-content: center;
+	li{
+		display: inline-block;
+		padding:4px 12px;
+		color:#A2AFBB;
+		font-size:15px;
+		cursor: pointer;
+		background: none;
+		border:none;
+		line-height:1.1;
+		height:auto;
+		margin-right:15px;
+		&.active{
+			color:#778490;
+			background: #DFE5EB;
+			border-radius: 12px;
+			border-color:transparent;
+		}
+	}
+}

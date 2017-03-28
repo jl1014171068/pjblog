@@ -17,6 +17,10 @@
 			overflow: hidden;
 			.blog_list{
 				.blog-list{
+					transition: all 0.4s;
+					&:hover{
+						transform: translateX(-10px);
+					}
 					margin-bottom: 40px;
 					a{
 						display: flex;
@@ -47,27 +51,7 @@
 					}
 				}
 			}
-			.paging{
-				display: flex;
-				justify-content: center;
-				li{
-					display: inline-block;
-					padding:4px 12px;
-					color:#A2AFBB;
-					font-size:15px;
-					cursor: pointer;
-					background: none;
-					border:none;
-					line-height:1.1;
-					height:auto;
-					margin-right:15px;
-					&.active{
-						color:#778490;
-						background: #DFE5EB;
-						border-radius: 12px;
-					}
-				}
-			}
+			
 		}
 		.nav{
 			width:160px;
@@ -102,6 +86,7 @@
 					margin-bottom: 30px;
 					cursor: pointer;
 					position: relative;
+
 					&.current{
 						color:#3D444A;
 					}
