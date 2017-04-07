@@ -18,7 +18,7 @@ const actions = {
         .then(result => {
             let res = result.data.data;
             commit('GETTYPE', {res})
-            window.axios.get('/articles',{
+            window.axios.get('/articles?groups=works',{
                 params: {
                     tags: res[state.currentIndex].name,
                     page: state.current_page,

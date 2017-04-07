@@ -70,7 +70,7 @@
                     &:last-child{
                     	border-bottom:0;
                     }
-            	}
+                }
             }
             .hr{
             	height:15px;
@@ -81,16 +81,20 @@
             	padding:0 25px;
             	box-sizing: border-box;
             	.img{
-                   margin:28px 0 0 0 ;
-            	}
-            	.text{
-            		text-align: center;
-            		display: block;
-            		margin:16px 0;
-            		color:#3d444a;
-            		font-size:13px;
-            	}
-            }
-        }
-    }
+                 margin:28px 0 0 0 ;
+             }
+             .text{
+              text-align: center;
+              display: block;
+              margin:16px 0;
+              color:#3d444a;
+              font-size:13px;
+          }
+      }
+  }
+}
+.commentsTop{
+    background:#fff;
+    width: 801px;
+}
 }

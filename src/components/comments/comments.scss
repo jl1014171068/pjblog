@@ -1,6 +1,6 @@
 .comments {
 	.content_lm {
-		background: #fff;
+		margin:40px auto 15px auto;
 		.control_comments {
 			padding: 34px 70px;
 			width: 100%;
@@ -34,6 +34,10 @@
 						a {
 							font-size: 24px;
 							color: #A2AFBB;
+							background-image:none;
+							text-indent:0;
+							margin:0;
+							padding-left:0;
 						}
 					}
 				}

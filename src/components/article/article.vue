@@ -14,7 +14,7 @@
 			<div class="hr"></div>
 			<div class="markdown-body" v-html='content.body'></div>
 		</div>
-        <comments :comments='content'></comments>
+        <!-- <comments :comments='content'></comments> -->
 	</div>
 </template>
 
@@ -61,5 +61,7 @@
 
 <style lang="scss" scoped>
     @import "~common/style/markdown.scss";
+</style>
+<style lang="scss" >
 	@import 'article.scss';
 </style>

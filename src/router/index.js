@@ -5,7 +5,8 @@ import me from 'components/me/me'
 import blogs from 'components/blogs/blogs'
 import share from 'components/share/share'
 import article from 'components/article/article'
-import blogArticle from 'components/blogArticle/blogArticle'
+import blog from 'components/blog/blog'
+import notFound from 'components/notFound/notFound'
 
 import login from 'components/oauth/github'
 
@@ -45,7 +46,7 @@ export default new Router({
     }, {
         path: '/blog/:slug',
         name: 'slug',
-        component: blogArticle,
+        component: blog,
         title: '小老虎喵喵喵-文章详情'
     }, {
         path: '/share',
@@ -54,6 +55,12 @@ export default new Router({
         title: '小老虎喵喵喵-分享中心'
     },
     {
+        path: '*',
+        name: '404',
+        component: notFound,
+        title: '找不到页面'
+    },
+     {
         path: '/oauth/github',
         name: 'login',
         component: login,

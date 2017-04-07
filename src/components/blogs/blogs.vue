@@ -1,7 +1,7 @@
 <template>
     <div class="blog">
         <div class="content_lm">
-            <div class="content" style="min-height: 400px;">
+            <div class="content" style="min-height: 600px;">
                 <ul class="blog_list">
                     <li v-for='(article,id) in articles' class='blog-list'>
                         <router-link :to="{name: 'slug', params: { slug: article.slug }}">
@@ -11,13 +11,13 @@
                             <div class="info">
                                 <h3 class="title">{{article.title}}</h3>
                                 <p class="text">
-                                    {{article.body | maxlength}}
+                                    {{article.description | maxlength}}
                                 </p>
                                 <span class="time">{{article.created_at}}</span>
                             </div>
                         </router-link>
                     </li>
-                    <div v-if='!articles.length'>没有内容</div>
+                    <div class='null' v-show='!articles.length'><img src="./article_null.png" alt=""></div>
                 </ul>
                 <div class="paging" v-show='total_pages>1'>
                     <el-pagination layout="pager" :total="total" :page-size='per_count' :current-page="current_page" @current-change="changePage">
@@ -27,7 +27,6 @@
             <div class="nav">
                 <h2 class="title" @click='allShow' :class="{'current':currentIndex===''}">全部文章</h2>
                 <ul class="links">
-
                     <li :class="{'current':currentIndex===index}" @click="changeIndex(value,index)" v-for="(value, index) in links"><span>{{value.name}}<i class="count">({{value.count}})</i></span></li>
                 </ul>
             </div>
@@ -35,19 +34,12 @@
     </div>
 </template>
 <script>
-// const links = ['界面', '动态', '图标', '壁纸'];
 import Vue from 'vue';
 import { mapState } from 'vuex'
 
 export default {
     created() {
-            // this.fetchDate(this.page);
             this.$store.dispatch('getBlogs')
-
-            // this.$axios.get('/tags?groups=blog').then(result => {
-            //     this.links = result.data.data
-            //     this.allShow();
-            // });
         },
          computed: mapState({
                 links: state => state.blogs.links,
@@ -66,45 +58,12 @@ export default {
                 this.$store.state.blogs.articles = '';
                 this.$store.dispatch('getBlogs')
             },
-            fetchDate(page) {
-                let _this = this;
-                this.$axios.get('/articles?groups=blog', {
-                    params: {
-                        tags: _this.links[_this.currentIndex].name,
-                        page: page,
-                        per_count: _this.per_count
-                    }
-                }).then(result => {
-                   var _this=this;
-                    if(!result.data.data.length){
-                        this.articles=[];
-                        _this.total_pages=0;
-                        _this.total=0;
-                        return false;
-                    }
-                    this.articles = result.data.data;
-                    _this.total_pages=result.data.meta.pagination.total_pages;
-                    _this.total=result.data.meta.pagination.total;
-                });
-               
-            },
             changePage (e) {
-                this.fetchDate(e);
+                this.$store.dispatch('getBlogs',e)
             },
-            allShow () {
-                let _this = this,page=_this.page;
-                this.$set(this, 'articles', '');
-                this.$set(this, 'currentIndex', '');
-                this.$axios.get('/articles', {
-                    params: {
-                        page: page,
-                        per_count: _this.per_count
-                    }
-                }).then(result => {
-                    this.articles = result.data.data;
-                    _this.total_pages=result.data.meta.pagination.total_pages;
-                    _this.total=result.data.meta.pagination.total;
-                });
+            allShow(){
+                this.$store.state.blogs.currentIndex = '';
+                this.$store.dispatch('getBlogs')
             }
         },
         filters: {

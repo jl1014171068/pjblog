@@ -9,7 +9,7 @@ const state = {
 
 const actions = {
     getArticle({commit}) {
-        window.axios.get('/articles/'+state.slug)
+        window.axios.get('/articles/'+state.slug+'?groups=works')
         .then(result => {
             let res=result.data.data;
             commit('GETARTICLE', {res})

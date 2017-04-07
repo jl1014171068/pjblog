@@ -2,7 +2,7 @@ import Vue from 'vue';
 
 const state = {
     links: [],
-    currentIndex: 0,
+    currentIndex: '',
     articles: [],
     page: 1,
     per_count: 10,
@@ -12,27 +12,33 @@ const state = {
 };
 
 const actions = {
-    getBlogs({commit}) 
+    getBlogs({commit},current_page) 
     {
         window.axios.get('/tags?groups=blog')
         .then(result => {
             let res = result.data.data;
-
             commit('GETLINKS', {res})
-            window.axios.get('/articles?groups=blog',{
-                params: {
+            window.axios.get('/articles?groups=blog',state.currentIndex===''?{
+                params:{
+                    page: current_page||1,
+                    per_count: state.per_count
+                }
+            }:{
+                params:{
                     tags: res[state.currentIndex].name,
-                    page: state.current_page,
+                    page: current_page||1,
                     per_count: state.per_count
                 }
             })
             .then(result => {
                 let res = result.data;
+                document.body.scrollTop=0;
                 commit('GETBLOGS', {res})
             });
 
         });
     }
+
 };
 
 
@@ -52,6 +58,7 @@ const mutations = {
         state.total_pages=res.meta.pagination.total_pages
         // 当前页数
         state.current_page=res.meta.pagination.current_page
+        state.total=res.meta.pagination.total
     }
 }
 

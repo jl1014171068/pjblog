@@ -14,6 +14,7 @@
                         </router-link>
                     </li>
                 </ul>
+                <div class='null' v-show='!articles.length'><img src="./null.png" alt=""></div>
 
                 <button class="more wow" @click='more'  >
                 {{ moreFlag ? '查看更多' : '没有更多数据'}}

@@ -86,9 +86,31 @@
 					margin-bottom: 30px;
 					cursor: pointer;
 					position: relative;
-
+					span{
+						&:after {
+							content: "";
+							display: block;
+							width: 0;
+							height: 2px;
+							background-color: #8a8a8a;
+							position: absolute;
+							bottom: 0px;
+							opacity: 0;
+							transition: all 0.6s ease 0s;
+							margin:0 auto;
+							left:0;
+							right:0;
+							top:20px;
+						}
+					}
 					&.current{
 						color:#3D444A;
+						span{
+							&:after {
+								width: 60px;
+								opacity: 1;
+							}
+						}
 					}
 					&:last-child{
 						margin-bottom: 0;
@@ -99,5 +121,11 @@
 				}
 			}
 		}
+	}
+	.null{
+		min-height:600px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 }
